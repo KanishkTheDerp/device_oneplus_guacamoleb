@@ -11,11 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 # Inherit from guacamoleb device
 $(call inherit-product, device/oneplus/guacamoleb/device.mk)
 
-# Inherit some common KOSP stuff.
-$(call inherit-product, vendor/krypton/configs/KryptonCommon.mk)
+# Inherit some common VoltageOS stuff.
+$(call inherit-product, vendor/voltage/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := krypton_guacamoleb
+PRODUCT_NAME := voltage_guacamoleb
 PRODUCT_DEVICE := guacamoleb
 PRODUCT_BRAND := OnePlus
 PRODUCT_MODEL := GM1905
@@ -25,14 +25,6 @@ PRODUCT_AAPT_CONFIG := xxhdpi
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_CHARACTERISTICS := nosdcard
 
-#GAPPS
-GAPPS_BUILD := true
-
-# Boot animation
-scr_resolution := 1080
-TARGET_SCREEN_HEIGHT := 2240
-TARGET_SCREEN_WIDTH := 1080
-
 # Build info
 BUILD_FINGERPRINT := "OnePlus/OnePlus7/OnePlus7:11/RKQ1.201022.002/2110211505:user/release-keys"
 PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -40,3 +32,6 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME=OnePlus7
     PRIVATE_BUILD_DESC="OnePlus7-user 11   release-keys"
 PRODUCT_GMS_CLIENTID_BASE := android-oneplus
+
+#VoltageOS Build Type
+VOLTAGE_BUILD_TYPE := OFFICIAL

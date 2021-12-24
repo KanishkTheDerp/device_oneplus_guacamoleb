@@ -14,7 +14,7 @@ $(call inherit-product, vendor/oneplus/guacamoleb/guacamoleb-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-krypton
+    $(LOCAL_PATH)/overlay-voltage
 
 # Audio
 PRODUCT_COPY_FILES += \
@@ -26,9 +26,6 @@ PRODUCT_COPY_FILES += \
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom
-
-# Mark as official build
-OFFICIAL_BUILD := true
 
 # Remove some prebuilt apps
 PRODUCT_PACKAGES += \
